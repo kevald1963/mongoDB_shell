@@ -21,8 +21,8 @@ coll = conn[DBS_NAME][COLLECTION_NAME]
 
 # Insert a single document (record) into the database.
 #Code below works fine. Just commented-out to avoid re-inserting more than once.
-#new_doc = {'first': 'douglas', 'last': 'adams', 'dob':'11/03/1952', 'hair_colour': 'grey', 'occupation':'writer', 'nationality': 'english'}
-#coll.insert(new_doc)
+new_doc = {'first': 'douglas', 'last': 'adams', 'dob':'11/03/1952', 'hair_colour': 'grey', 'occupation':'writer', 'nationality': 'english'}
+coll.insert_one(new_doc)
 
 # Insert multiple documents into the database.
 #new_docs = [ {'first': 'terry', 'last': 'pratchett', 'gender': 'm','dob':'28/04/1948', 'hair_colour': 'not much left!', 'occupation':'writer', 'nationality': 'english'}, {'first': 'george', 'last': 'rr martin', 'gender': 'm','dob':'20/09/1948', 'hair_colour': 'white', 'occupation':'writer', 'nationality': 'american'}]
@@ -51,8 +51,8 @@ coll = conn[DBS_NAME][COLLECTION_NAME]
 #    print(doc)
 
 # Update many record, e.g. set hair colour to 'maroon' on first record where nationality is 'american'.
-coll.update_many({'nationality': 'american'}, {'$set': {'hair_colour': 'maroon'}})
-documents = coll.find({'nationality': 'american'})
-for doc in documents:
-    print(doc)
+#coll.update_many({'nationality': 'american'}, {'$set': {'hair_colour': 'maroon'}})
+#documents = coll.find({'nationality': 'american'})
+#for doc in documents:
+#    print(doc)
 
